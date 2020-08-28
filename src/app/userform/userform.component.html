@@ -1,0 +1,42 @@
+
+<label>Crear</label>
+<form [formGroup]="formUser" (ngSubmit)="submit()">
+    <div>
+        <label>Nombre</label>
+        <input type="text" formControlName="name"/>
+    </div>
+    <div *ngIf="formUser.controls.name.errors && (formUser.controls.name.dirty || formUser.controls.name.touched)">
+            Nombre is required.
+    </div>
+    <div>
+        <label>Apellidos</label>
+        <input type="text" formControlName="lastname"/>
+    </div>
+    <div *ngIf="formUser.controls.lastname.errors && (formUser.controls.lastname.dirty || formUser.controls.lastname.touched)">
+            Apellidos is required.
+    </div>
+    <div>
+        <label>Teléfono</label>
+        <input type="number" formControlName="tel"/>
+    </div>
+    <div *ngIf="formUser.controls.tel.errors && (formUser.controls.tel.dirty || formUser.controls.tel.touched)">
+            Teléfono is required.
+    </div>
+    <div>
+        <label>Correo</label>
+        <input type="email" formControlName="email"/>
+    </div>
+    <div *ngIf="formUser.controls.email.errors && (formUser.controls.email.dirty || formUser.controls.email.touched)">
+            Correo is required.
+    </div>
+    <div>
+        <label>Dirección</label>
+        <input type="text" formControlName="address"/>
+    </div>
+    <div *ngIf="formUser.controls.address.errors && (formUser.controls.address.dirty || formUser.controls.address.touched)">
+            Dirección is required.
+    </div>
+    <div>
+        <input type="submit" value="Enviar" [disabled]="formUser.invalid"/>
+    </div>
+</form>

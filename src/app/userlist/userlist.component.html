@@ -1,0 +1,24 @@
+<label>Lista</label>
+
+<table>
+    <tr>
+        <td>ID</td>
+        <td>Nombre</td>
+        <td>Apellido</td>
+        <td>Tel</td>
+        <td>Email</td>
+        <td>Dirección</td>
+        <td>Actualizar</td>
+        <td>Eliminar</td>
+    </tr>
+    <tr *ngFor="let item of list">
+        <td>{{item.id}}</td>
+        <td>{{item.name}}</td>
+        <td>{{item.lastname}}</td>
+        <td>{{item.tel}}</td>
+        <td>{{item.email}}</td>
+        <td>{{item.address}}</td>
+        <td><button (click)="update(item.id)">Actualizar</button></td>
+        <td><button (click)="delete(item.id)">Eliminar</button></td>
+    </tr>
+</table>
